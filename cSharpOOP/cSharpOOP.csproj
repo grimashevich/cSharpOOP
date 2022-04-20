@@ -43,10 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Lesson3\BankAccount.cs" />
-    <Compile Include="Lesson3\BankAccountType.cs" />
-    <Compile Include="Lesson3\EmailParser.cs" />
-    <Compile Include="Lesson3\StringReverse.cs" />
+    <Compile Include="Lesson6\BankAccount.cs" />
+    <Compile Include="Lesson6\BankAccountType.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

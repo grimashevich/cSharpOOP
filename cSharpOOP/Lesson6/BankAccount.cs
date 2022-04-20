@@ -90,5 +90,40 @@ namespace cSharpOOP
             }
             return false;
         }
+
+        /*По идее достаточно сравнения по номеру счета, т.к. они всегда уникальны, но на всякий
+         случай я добавил еще и сравнение типов бансковских счетов */
+        public static bool operator ==(BankAccount ac1, BankAccount ac2)
+        {   
+            return ac1._id == ac2._id && ac1._bankAccountType == ac2._bankAccountType;
+        }
+        
+        public static bool operator !=(BankAccount ac1, BankAccount ac2)
+        {
+            return ac1._id != ac2._id || ac1._bankAccountType != ac2._bankAccountType;
+        }
+
+        public override bool Equals(Object obj)
+        {
+            if (obj == null || ! obj.GetType().Equals(this.GetType()))
+                return false;
+            BankAccount ac2 = (BankAccount)obj;
+            return this._id == ac2._id && this._bankAccountType == ac2._bankAccountType;
+        }
+
+        public override int GetHashCode()
+        {
+            int hashCode = -104866759;
+            hashCode = hashCode * -1521134295 + _id.GetHashCode();
+            hashCode = hashCode * -1521134295 + _balance.GetHashCode();
+            hashCode = hashCode * -1521134295 + _bankAccountType.GetHashCode();
+            return hashCode;
+        }
+
+        public void CopyIdFrom(BankAccount ac1)
+        {
+            this._id = ac1._id;
+        }
+        
     }
 }
